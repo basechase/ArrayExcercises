@@ -43,13 +43,16 @@ namespace ArrayExcercises
 				PrintHighest(ints);
 				PrintLowest(ints);
 				PrintArray(ints);
-
+				/*
 				if (Int32.TryParse(test, out int num))
 				{
 
 					x = num;
 				}
 				return null;
+				*/
+				return null;
+
 			}
 
 			int[] PrintArray(int[] array)
@@ -70,7 +73,7 @@ namespace ArrayExcercises
 					sum += num;
 
 
-					Console.WriteLine("Sum of array is" + sum);
+					Console.WriteLine("Sum of array is " + sum);
 
 				}
 
@@ -96,7 +99,12 @@ namespace ArrayExcercises
 
 			int[] PrintReverse(int[] array)
 			{
+				Array.Reverse(array);
 
+				foreach (int a in array)
+				{
+					Console.WriteLine(array);
+				}
 
 
 				return null;
