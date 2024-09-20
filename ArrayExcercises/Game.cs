@@ -18,70 +18,91 @@ namespace ArrayExcercises
 
 		public void Run()
 		{
-			int[] ints = GetValues();
-			PrintArray(ints);
-			PrintReverse(ints);
-			PrintSum(ints);
-			PrintHighest(ints);
-			PrintLowest(ints);
-		}
-
-		int GetArray()
-
-		{
-			return 0;
-		}
+			//* int[] ints = GetValues();
 
 
+			int[] ints = new int[5];
 
-		int[] GetValues()
-		{
-			// Int32.Parse()
-			string test = "5";
-			int x = 0;
-			if (Int32.TryParse(test, out int num))
+			GetValues();
+
+
+			int[] GetValues()
 			{
-				x = num;
-			}
-			return null;
-		}
-
-		int[] PrintArray(int[] array)
-		{
-			for (int i = 0; i < array.Length; i++)
+				Console.WriteLine("gimme 5 numbers");
+				// Int32.Parse()
+				string test = "";
+				int x = 0;
+				for (int i = 0; i < 5; i++)
 				{
-				Console.WriteLine(array[i]);
+					ints[i] = Convert.ToInt32(Console.ReadLine());
+
+				}
+
+				PrintSum(ints);
+				PrintReverse(ints);
+				PrintHighest(ints);
+				PrintLowest(ints);
+				PrintArray(ints);
+
+				if (Int32.TryParse(test, out int num))
+				{
+
+					x = num;
+				}
+				return null;
 			}
-			return null;
+
+			int[] PrintArray(int[] array)
+			{
+				for (int i = 0; i < 5; i++)
+				{
+					Console.WriteLine(array[i]);
+				}
+				return null;
+			}
+
+
+			int[] PrintSum(int[] array)
+			{
+				int sum = 0;
+				foreach (int num in array)
+				{
+					sum += num;
+
+
+					Console.WriteLine("Sum of array is" + sum);
+
+				}
+
+
+				return null;
+
+			}
+
+			int[] PrintHighest(int[] array)
+			{
+				int x = array.Max();
+				Console.WriteLine("Max value is: " + x);
+
+				return null;
+			}
+
+			int[] PrintLowest(int[] array)
+			{
+				int x = array.Min();
+				Console.WriteLine("Min value is: " + x);
+				return null;
+			}
+
+			int[] PrintReverse(int[] array)
+			{
+
+
+
+				return null;
+			}
+
 		}
-
-		
-		int[] PrintSum(int[] array)
-		{
-			
-		
-			
-			return null;
-
-		}
-
-		int[] PrintHighest(int[] array)
-		{
-			return null;
-		}
-
-		int[] PrintLowest(int[] array)
-		{
-			
-			return null;
-		}
-
-		int[] PrintReverse(int[] array)
-		{
-			Console.WriteLine();
-			return null;
-		}
-
 	}
 }
 
