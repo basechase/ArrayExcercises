@@ -30,33 +30,55 @@ namespace ArrayExcercises
 			{
 				Console.WriteLine("gimme 5 numbers");
 				// Int32.Parse()
+
+				// string test stores user input as a string, int32.tryparse converts into an int, stores into num
+				// reassigns as ints[i] moves up the array
 				string test = "";
-				int x = 0;
+				
 				for (int i = 0; i < 5; i++)
 				{
-					ints[i] = Convert.ToInt32(Console.ReadLine());
+					test = Console.ReadLine();	
+
+					if (Int32.TryParse(test, out int num))
+					{
+						ints[i] = num;
+						//assign converted int to array ints[i]
+					}
+					else
+					{
+						Console.WriteLine("Not an integer");
+						i--;
+						//have to go back down to reassign correct values
+					}
+
 
 				}
+					return ints;
 
-				PrintSum(ints);
-				PrintReverse(ints);
-				PrintHighest(ints);
-				PrintLowest(ints);
-				PrintArray(ints);
-				/*
-				if (Int32.TryParse(test, out int num))
-				{
-
-					x = num;
-				}
-				return null;
-				*/
-				return null;
+               // return null;
 
 			}
 
+					//	ints[i] = Convert.ToInt32(Console.ReadLine());
+
+				PrintSum(ints);
+				
+
+				PrintHighest(ints);
+              
+
+                PrintLowest(ints);
+               
+
+                PrintArray(ints);
+				
+
+                PrintReverse(ints);
+                
+
 			int[] PrintArray(int[] array)
 			{
+				Console.WriteLine("\nArray printed as provided");
 				for (int i = 0; i < 5; i++)
 				{
 					Console.WriteLine(array[i]);
@@ -67,15 +89,11 @@ namespace ArrayExcercises
 
 			int[] PrintSum(int[] array)
 			{
-				int sum = 0;
-				foreach (int num in array)
-				{
-					sum += num;
+				int sum = array.Sum();
+				Console.WriteLine("\nSum of the array is: "+ sum);
+				
 
-
-					Console.WriteLine("Sum of array is " + sum);
-
-				}
+				
 
 
 				return null;
@@ -85,25 +103,32 @@ namespace ArrayExcercises
 			int[] PrintHighest(int[] array)
 			{
 				int x = array.Max();
-				Console.WriteLine("Max value is: " + x);
+				Console.WriteLine("\nMax value is: " + x);
 
 				return null;
 			}
 
 			int[] PrintLowest(int[] array)
 			{
+				
 				int x = array.Min();
-				Console.WriteLine("Min value is: " + x);
+				Console.WriteLine("\nMin value is: " + x);
 				return null;
 			}
 
+
+
 			int[] PrintReverse(int[] array)
 			{
+				Console.WriteLine("\nArray will now be printed in reverse");
+				
 				Array.Reverse(array);
 
+
+				// have to convert int to a string 
 				foreach (int a in array)
 				{
-					Console.WriteLine(array);
+					Console.WriteLine(Convert.ToInt32(a));
 				}
 
 
